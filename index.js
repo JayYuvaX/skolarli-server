@@ -14,6 +14,12 @@ app.use(express.json())
 // connect database
 connectDB()
 
+// root route
+app.get("/", (req, res) => {
+    res.send("Skolarli API is running 🚀")
+})
+
+// API route
 app.use("/api/questions", questionRoutes)
 
 const PORT = process.env.PORT || 5000
